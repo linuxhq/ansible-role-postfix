@@ -11,6 +11,12 @@
   command: |
     postmap hash:/etc/postfix/sasl_passwd
 
+- name: postmap sender_canonical
+  tags: postfix
+  become: true
+  command: |
+    postmap hash:/etc/postfix/sender_canonical
+
 - name: restart postfix
   tags: postfix
   become: true
